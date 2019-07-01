@@ -1,0 +1,32 @@
+extends ../layouts/main.pug
+
+block content
+  .container
+    header
+      h1= title
+
+    div
+      table.table.table-striped
+        thead
+          tr
+            th Title
+            th Description
+            th Image
+            th Category
+            th Actions
+        
+        tbody
+          each video in videos
+            tr
+              td
+                a(href=`/videos/${video.id}`)= video.title
+              td= video.desc
+              td
+                img(src=`${video.image}` alt=`${video.id} Image`)
+              td= video.category
+              td
+                a(href=`/videos/${video.id}/edit`) edit
+                = ' | '
+                form.destroy(action=`/videos/destroy`, method="POST", onsubmit=`return confirm("Are you absolutely positively sure you want to permently delete this video?")`)
+                  input(type="hidden", name="id", value=video.id)
+                  input(type="submit", value="delete")

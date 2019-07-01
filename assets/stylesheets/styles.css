@@ -1,0 +1,51 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* Photo by Marco Molitor on Unsplash */
+.home-cta {
+  background: url('/images/background.jpg');
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-cta>h1 {
+  color: #fff;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  font-size: 5rem;
+}
+
+.content {
+  margin-top: 60px;
+}
+
+.container {
+  margin-top: 60px;
+}
+
+.destroy {
+  display: inline;
+}
+
+.destroy>input[type="submit"] {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: #007bff;
+}
+
+.destroy:hover>input[type="submit"] {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+.flash {
+  margin-top: 60px;
+}

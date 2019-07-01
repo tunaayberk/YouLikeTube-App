@@ -1,0 +1,26 @@
+form(action=(video ? `/users/update` : "/users"), method="POST")
+  if user
+    input(type="hidden", name="id", value=user.id)
+
+  .form-group
+    label First Name
+    input.form-control(name="user[firstName]", required, value=(user ? user.firstName : null))
+
+  .form-group
+    label Last Name
+    input.form-control(name="user[lastName]", required, value=(user ? user.lastName : null))
+
+  .form-group
+    label Email
+    input.form-control(name="user[email]", required, value=(user ? user.email : null))
+
+  .form-group
+    label Password
+    input.form-control(name="user[password]", type="password", required, value=(user ? user.password : null))
+
+  .form-group
+    label Password Confirmation
+    input.form-control(name="user[passwordConfirmation]", required, type="password", value=(user ? user.passwordConfirmation : null))
+  
+  .form-group
+    button.btn.btn-dark(type="submit") Submit

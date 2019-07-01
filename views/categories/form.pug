@@ -1,0 +1,14 @@
+form(action=(category ? '/categories/update' : '/categories'), method="POST")
+  if category
+    input(type="hidden", name="id", value=category.id)
+
+  .form-group
+    label Name
+    input.form-control(name="category[name]", required, value=(category ? category.name : null))
+
+  .form-group
+    label Icon
+    input.form-control(name="category[icon]", value=(category ? category.icon : null))
+  
+  .form-group
+    button.btn.btn-dark(type="submit") Submit

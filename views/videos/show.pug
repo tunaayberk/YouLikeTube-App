@@ -1,0 +1,12 @@
+extends ../layouts/main.pug
+block content
+  .container
+    header
+      img(src=`${video.image}` alt=`${video.id} Image`)
+      
+    div
+      h1= video.title
+      
+    div
+      p= video.desc
+      small= video.category

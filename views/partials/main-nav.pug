@@ -1,0 +1,30 @@
+nav.navbar.fixed-top.navbar-expand-lg.navbar-light.bg-light
+  a.navbar-brand(href='/') YouLikeTube
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item
+        a.nav-link(href='/') Home
+      li.nav-item
+        a.nav-link(href='/about') About
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Categories
+        .dropdown-menu
+          a.dropdown-item(href='/categories') Categories
+          a.dropdown-item(href='/categories/new') New Category
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Videos
+        .dropdown-menu
+          a.dropdown-item(href='/videos') Videos
+          a.dropdown-item(href='/videos/new') New Video
+      li.nav-item
+        a.nav-link(href='users/new') Register
+      li.nav-item
+        a.nav-link(href='/login') Login
+      li.nav-item
+        form.nav-destroy(action='/logout', method="POST")
+          input(type='submit',value="Logout")
+      li.nav-item
+        a.nav-link(href='/contact') Contact

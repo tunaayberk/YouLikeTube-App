@@ -1,0 +1,28 @@
+extends ../layouts/main.pug
+
+block content
+  .container
+    header
+      h1= title
+
+    div
+      table.table.table-striped
+        thead
+          tr
+            th Name
+            th Icon
+            th Actions
+        
+        tbody
+          each category in categories
+            tr
+              td
+                a(href=`/categories/${category.id}`)= category.name
+              td
+                img(src=`${category.icon}` alt=`${category.id} Icon`)
+              td
+                a(href=`/categories/${category.id}/edit`) edit
+                = ' | '
+                form.destroy(action=`/category/destroy`, method="POST", onsubmit=`return confirm("Are you absolutely positively sure you want to permently delete this category?")`)
+                  input(type="hidden", name="id", value=category.id)
+                  input(type="submit", value="delete")

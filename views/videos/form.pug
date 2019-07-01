@@ -1,0 +1,25 @@
+form(action=(video ? '/videos/update' : '/videos'), method="POST")
+  if video
+    input(type="hidden", name="id", value=video.id)
+
+  .form-group
+    label Title
+    input.form-control(name="video[title]", required, value=(video ? video.title : null))
+
+  .form-group
+    label Description
+    textarea.form-control(name="video[desc]", value=(video ? video.desc : null))
+
+  .form-group
+    label Image
+    input.form-control(name="video[image]", required, value=(video ? video.image : null))
+
+  .form-group
+    label Category
+    select.form-control(name="video[category]", required)
+      each category in categories
+        option(value=category, selected=(video && video.category === category))
+          
+  
+  .form-group
+    button.btn.btn-dark(type="submit") Submit
