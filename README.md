@@ -1,2 +1,1 @@
-# comp-2068-thursday
-A blogging platform
+# Bookmark videos from YouTube and manage them easily with YouLikeTube App. 
