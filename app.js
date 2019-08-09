@@ -49,13 +49,6 @@ app.use(bodyParser.urlencoded({
 }));
 // End Parser
 
-// Our views path
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
-app.use('/css', express.static('assets/stylesheets'));
-app.use('/js', express.static('assets/javascripts'));
-app.use('/images', express.static('assets/images'));
-
 // Our routes
 const routes = require('./routes.js');
 app.use('/', routes);
